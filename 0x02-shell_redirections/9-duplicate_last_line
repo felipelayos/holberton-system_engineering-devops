@@ -1,2 +1,2 @@
 #!/bin/bash
-tail -1 n ianca >> ianca
+tail -n 1 ianca >> ianca
