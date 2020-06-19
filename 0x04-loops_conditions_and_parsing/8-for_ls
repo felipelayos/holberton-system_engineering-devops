@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+for f in *
+do echo "$f"
+done | cut -f2 -d "-"
