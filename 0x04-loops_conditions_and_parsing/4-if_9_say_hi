@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+#Print 10 times "Holberton school"
+#But on the 9th iteration print "hi"
 i=0
 while [ "$i" -lt 10 ]
 do
