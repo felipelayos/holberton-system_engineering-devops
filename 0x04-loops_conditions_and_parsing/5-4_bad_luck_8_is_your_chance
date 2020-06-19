@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+#Print 10 numbers, but certain
+#phrases with certain iterations
 i=0
 while [ "$i" -lt 10 ]
 do
