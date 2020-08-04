@@ -1,4 +1,4 @@
-# Create file
+#Create file
 file { '/tmp/holberton':
     ensure  =>  file,
     owner   =>  'www-data',
