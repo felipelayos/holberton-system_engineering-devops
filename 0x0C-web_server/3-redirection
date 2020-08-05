@@ -2,8 +2,9 @@
 # Configure nginx
 sudo apt-get -y update
 sudo apt-get install -y nginx
+sudo service nginx start
 sudo ufw allow 'Nginx HTTP'
 sudo ufw allow 22/tcp
 sudo echo 'Holberton School' > /var/www/html/index.nginx-debian.html
-sudo sed -i "/server_name _;/a \\\n\tlocation /redirect_me {\n\t\treturn 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;\n\t}\n" /etc/nginx/sites-enabled/default
+sudo sed -i "30i \\\n\tlocation /redirect_me {\n\t\treturn 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;\n\t}\n" /etc/nginx/sites-enabled/default
 sudo service nginx restart
