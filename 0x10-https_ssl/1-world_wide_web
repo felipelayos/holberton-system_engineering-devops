@@ -4,7 +4,7 @@
 
 funct() {
 	if [[ $# -eq 1 ]]; then
-		dig $2.$1 | awk 'f;/ANSWER SECTION:/{f=1}' | head -n 1 | awk '{print "The subdomain ", $6, " is a ", $4, " record and points to ", $5}'
+		dig $2.$1 | awk 'f;/ANSWER SECTION:/{f=1}' | head -n 1 | awk '{print "The subdomain ", $6, " is a ", $2, " record and points to ", $5}'
 	else
 		dig "www".$1 | awk 'f;/ANSWER SECTION:/{f=1}' | head -n 1 | awk '{print "The subdomain www is a ", $4, " record and points to ", $5}'
 		dig "lb-01".$1 | awk 'f;/ANSWER SECTION:/{f=1}' | head -n 1 | awk '{print "The subdomain lb-01 is a ", $4, " record and points to ", $5}'
