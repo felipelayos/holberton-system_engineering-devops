@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 # subdomain
+#shellcheck disable=SC2086
 
 funct() {
 	if [[ "$1" != "" && "$2" == "" ]]; then
