@@ -17,7 +17,7 @@ if __name__ == "__main__":
 
     todos_list = json.loads(data.text)
 
-    with open('2.csv', 'w', newline='') as file:
+    with open('{}.csv', 'w', newline='').format(sys.argv[1]) as file:
         writer = csv.writer(file, delimiter=',',
                             quotechar='"',
                             quoting=csv.QUOTE_ALL)
