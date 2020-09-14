@@ -19,7 +19,6 @@ if __name__ == "__main__":
 
     todos_list = json.loads(data.text)
 
-    file = "" + sys.argv[1] + ".json"
     tasks = []
     to_json = {}
     for key in todos_list:
@@ -29,5 +28,5 @@ if __name__ == "__main__":
         my_dict["username"] = emp_username
         tasks.append(my_dict)
     to_json[sys.argv[1]] = tasks
-    with open(file, "w") as f:
-        json.dump(to_json, f)
+    with open("" + sys.argv[1] + ".json", "w") as file:
+        json.dump(to_json, file)
