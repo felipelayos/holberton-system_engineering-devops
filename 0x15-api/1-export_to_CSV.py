@@ -23,8 +23,5 @@ if __name__ == "__main__":
                             quoting=csv.QUOTE_ALL)
 
         for key in todos_list:
-            writer.writerow(
-                [str(sys.argv[1]),
-                 emp_username,
-                 key['completed'],
-                 key['title']])
+            writer.writerow([argv[1]] + [user.get('username')] +
+                            [task.get("completed")] + [task.get("title")])
