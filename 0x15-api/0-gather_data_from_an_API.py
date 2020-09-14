@@ -1,22 +1,20 @@
 #!/usr/bin/python3
 import requests
 import sys
-import json
 
 if __name__ == "__main__":
 
     user_info = requests.get(
-        'https://jsonplaceholder.typicode.com/users/{}'.format(sys.argv[1]))
-    data = requests.get(
+        'https://jsonplaceholder.typicode.com/users/{}'
+        .format(sys.argv[1])).json()
+    todos_list = requests.get(
         'https://jsonplaceholder.typicode.com/users/{}/todos'
-        .format(sys.argv[1]))
+        .format(sys.argv[1])).json()
 
     done_taks = 0
     total_taks = 0
 
-    emp_name = user_info.json()["name"]
-
-    todos_list = json.loads(data.text)
+    emp_name = user_info["name"]
 
     for key in todos_list:
         if key['completed'] is True:
@@ -28,4 +26,4 @@ if __name__ == "__main__":
 
     for key in todos_list:
         if key['completed'] is True:
-            print("     {}".format(key['title']))
+            print("\t {}".format(key['title']))
