@@ -29,4 +29,4 @@ if __name__ == "__main__":
 
     for key in todos_list:
         if key['completed'] is True:
-            print("     {}".format(key['title']))
+            print("\t {}".format(key['title']))
