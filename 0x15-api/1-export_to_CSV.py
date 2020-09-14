@@ -17,11 +17,14 @@ if __name__ == "__main__":
 
     todos_list = json.loads(data.text)
 
-    with open('{}.csv', 'w').format(sys.argv[1]) as file:
+    with open('' + sys.argv[1] + '.csv', 'w') as file:
         writer = csv.writer(file, delimiter=',',
                             quotechar='"',
                             quoting=csv.QUOTE_ALL)
 
         for key in todos_list:
-            writer.writerow([argv[1]] + [user.get('username')] +
-                            [task.get("completed")] + [task.get("title")])
+            writer.writerow(
+                [sys.argv[1]] +
+                [emp_username] +
+                [key['completed']] +
+                [key['title']])
