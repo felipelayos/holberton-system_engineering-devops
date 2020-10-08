@@ -1,1 +1,9 @@
-#!/usr/bin/env bash
+server {
+    listen 80;
+    server_name 34.75.140.59 3.87.129.218;
+
+    location /airbnb-onepage {
+        include proxy_params;
+        proxy_pass http://3.87.129.218:5000/airbnb-onepage;
+    }
+}
